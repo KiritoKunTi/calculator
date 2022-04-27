@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial';
+    font-weight: 500;
+    font-size: 28px;
+    color: white;
+    background-color: #EDF6F9;
+    
+}
+* {
+    box-sizing: border-box;
+}
+div {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+
+}
+.wrap {
+    margin-top: 40px;
+
+
+}
+.block {
+    background-color: black;
+    position: relative;
+
+    width: 350px;
+    height: 600px;
+    margin: 0 auto;
+
+    border-radius: 30px;
+}
+.wrap-result {
+    position: relative;
+    box-sizing: border-box;
+    padding: 55px 25px 0 0;
+
+    width: 100%;
+}
+.answer {
+    text-align: right;
+    font-size: 40px;
+
+    margin-bottom: 5px;
+}
+.history {
+    font-size: 14px;
+    color: #ccc;
+
+    text-align: right;
+
+}
+.wrap-action {
+    bottom: 0;
+    position: absolute;
+    margin: 0 auto;
+    width: 350px;
+
+    margin-bottom: 50px;
+}
+.block-action {
+    margin: 0 auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px;
+    gap: 20px;
+    width: 300px;    
+}
+.btn {
+    border-radius: 18px;
+    border: none;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    transition: box-shadow linear .3s;
+
+}
+.btn:hover {
+    box-shadow: rgba(253, 253, 253, 0.3) 0px 5px 15px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    
+}
+.btn:active {
+    box-shadow: rgba(255, 255, 255, 0.03) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.01) 0px 18px 36px -18px inset;
+}
+.clear {
+}
+.plus-minus {
+}
+.percent {
+}
+.divide {
+}
+.seven {
+}
+.eight {
+}
+.nine {
+}
+.multiply {
+}
+.four {
+}
+.five {
+}
+.six {
+}
+.minus {
+}
+.zero {
+}
+.dot {
+}
+.unmod {
+}
+.equals {
+}
