@@ -3,7 +3,7 @@ body {
     font-weight: 500;
     font-size: 28px;
     color: white;
-    background-color: #EDF6F9;
+    background-color: #848a8c;
     
 }
 * {
@@ -13,7 +13,9 @@ div {
     padding: 0;
     margin: 0;
 }
-
+.mb-4 {
+    margin-bottom: -5px;
+}
 .wrapper {
 
 }
