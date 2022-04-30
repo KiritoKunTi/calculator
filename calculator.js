@@ -9,21 +9,22 @@ let finish = false;
 const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
 const action = ['+', '-', '*', '/']
 
+console.log('Aruto');
 
 document.querySelector('.buttons').addEventListener('click', event => {
     // pressed clear all
     if (event.target.classList.contains('clear')) {
-        let a = '';
-        let b = '';
-        let sign = '';
-        let finish = false;
-        answerNode.textContent = '';
+        a = '';
+        b = '';
+        sign = '';
+        finish = false;
+        answerNode.value = '';
         historyNode.textContent = '';
     };
 
     if (!event.target.classList.contains('btn')) return;
 
-    answerNode.textContent = '';
+    answerNode.value = '';
     
     // get pressed button
     const key = event.target.textContent;
@@ -32,15 +33,15 @@ document.querySelector('.buttons').addEventListener('click', event => {
     if (digits.includes(key)) {
         if (b === '' && sign === '') {
             a += key;
-            answerNode.textContent = a;
+            answerNode.value = a;
         } else if (a !== '' && b !== '' && finish) {
             b = key;
             finish = false; 
-            answerNode.textContent = b;
+            answerNode.value = b;
 
         } else {
             b += key;
-            answerNode.textContent = b;
+            answerNode.value = b;
         }
         console.log(a, b, sign);
     };
@@ -49,8 +50,19 @@ document.querySelector('.buttons').addEventListener('click', event => {
     if (action.includes(key)) {
         sign = key;
         console.log(sign);
-        answerNode.textContent = sign;
+        answerNode.value = sign;
     };
+
+    if (event.target.classList.contains('percent')) {
+        a = a/100;
+        sign = '*';
+        answerNode.value = '%';
+        // if (b !== '') {
+        //     a = a * b;
+        // } 
+        // answerNode.value = round(a);
+        return;
+    };  
 
     // solve 
     if (key === '=') {
@@ -74,7 +86,7 @@ document.querySelector('.buttons').addEventListener('click', event => {
                     a = '';
                     b = ''; 
                     sign = '';
-                    answerNode.innerText = 'error';
+                    answerNode.value = 'error';
                     return;
                 } else {
                     a = (+a) / (+b);
@@ -82,6 +94,36 @@ document.querySelector('.buttons').addEventListener('click', event => {
                 break;
         }
         finish = true;
-        answerNode.textContent = a;
+        answerNode.value = round(a);
     }
+
+    if (event.target.classList.contains('unmod')) {
+        
+        if (b === '' || finish) {
+            a = String(a);
+            a = a.substring(0, a.length-1);
+            answerNode.value = round(a);
+            return;
+        }
+
+        b = b.substring(0, b.length-1);
+        answerNode.value = round(b);
+        
+    };
+
+    if (event.target.classList.contains('plus-minus')) {
+        if (b === '' || finish) {
+            a = -a;
+            answerNode.value = round(a);
+            return;
+        }
+        b = -b;
+        answerNode.value = round(b);  
+    };
+
 });
+
+function round(num, decimalPlaces = 4) {
+    num = Math.round(num + "e" + decimalPlaces);
+    return String(Number(num + "e" + -decimalPlaces));
+};
