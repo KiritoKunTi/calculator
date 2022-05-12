@@ -4,5 +4,7 @@ Live:  https://kiritokunti.github.io/kiritokunti.github.io-calculator/calculator
 
 Keyboard:
 numbers:   1-9
+
 actions:   / * - + . 
+
 result:    =
